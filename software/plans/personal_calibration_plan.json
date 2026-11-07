@@ -1,0 +1,14 @@
+{
+  "name": "个人化标定方案（6动作×6轮×3秒+2秒休息）",
+  "duration_seconds": 3.0,
+  "rest_seconds": 2.0,
+  "说明": "给新用户做个人化迁移用：每个动作 3 秒、做 6 轮，轮次之间休息 2 秒。rest_seconds 是新增字段，旧方案不写就不休息。",
+  "gestures": [
+    { "name": "握拳", "code": 1, "rounds": 6 },
+    { "name": "十指张开", "code": 2, "rounds": 6 },
+    { "name": "OK手势", "code": 3, "rounds": 6 },
+    { "name": "比大拇指", "code": 4, "rounds": 6 },
+    { "name": "比耶", "code": 5, "rounds": 6 },
+    { "name": "捏合", "code": 6, "rounds": 6 }
+  ]
+}

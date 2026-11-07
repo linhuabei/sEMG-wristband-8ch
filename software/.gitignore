@@ -1,0 +1,43 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+
+# --- 打包产物 ---
+build/
+dist/
+*.exe
+*.msi
+*.zip
+
+# --- 运行时数据（程序会自动创建）---
+captured_data/
+training_data/
+recordings/
+plans/*.json
+!plans/personal_calibration_plan.json
+
+# --- IDE / 系统 ---
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- 日志与临时文件 ---
+*.log
+*.tmp

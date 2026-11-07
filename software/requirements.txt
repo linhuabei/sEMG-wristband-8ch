@@ -1,0 +1,5 @@
+PyQt5>=5.15
+pyqtgraph>=0.13
+numpy>=1.24
+scipy>=1.10
+bleak>=0.21
