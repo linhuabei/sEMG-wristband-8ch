@@ -32,32 +32,35 @@
 
 ## 接口定义 (Pinout)
 
-**注意**：图纸中 ESP32-S3-ZERO 通过网络标号与各个模块连接，请软件工程师核对实际 PCB 布线后补全以下 GPIO 映射表。
-
-### 1. ESP32 与 ADS1298 接口 (SPI)
+### 1. ESP32 与 ADS1298 接口 (SPI & 控制)
 | ESP32-S3 引脚 | ADS1298 引脚 | 功能说明 |
 | :--- | :--- | :--- |
-| `GPIO_xx` | CS (Pin 2) | 片选信号 |
-| `GPIO_xx` | SCLK (Pin 25) | SPI 时钟 |
-| `GPIO_xx` | DIN (Pin 27) | 主出从入 (MOSI) |
-| `GPIO_xx` | DOUT (Pin 28) | 主入从出 (MISO) |
-| `GPIO_xx` | DRDY (Pin 19) | 数据就绪中断 (低电平有效) |
-| `GPIO_xx` | RESET (Pin 18) | 硬件复位 |
-| `GPIO_xx` | PWDN (Pin 17) | 掉电/待机控制 |
+| `GPIO2` | DOUT (Pin 28) | SPI 主入从出 (MISO) |
+| `GPIO6` | SCLK (Pin 25) | SPI 时钟 |
+| `GPIO7` | DIN (Pin 27) | SPI 主出从入 (MOSI) |
+| `GPIO10` | CS (Pin 2) | SPI 片选信号 |
+| `GPIO9` | RESET (Pin 18) | 硬件复位 (RESET#) |
+| `GPIO11` | DRDY (Pin 19) | 数据就绪中断 (DRDY#，低电平有效) |
+| `GPIO12` | START (Pin 14) | 转换开始控制 |
+| `GPIO13` | PWDN (Pin 17) | 掉电/待机控制 (PWDN#) |
 
 ### 2. 传感器与扩展接口 (IIC)
 | ESP32-S3 引脚 | 器件/接口 | 功能说明 |
 | :--- | :--- | :--- |
-| `GPIO_xx` | LSM6DSR / IIC 拓展 | IIC_SCL |
-| `GPIO_xx` | LSM6DSR / IIC 拓展 | IIC_SDA |
-| `GPIO_xx` | LSM6DSR | 中断引脚 (INT1) |
+| `GPIO1` | LSM6DSR | IMU IIC_SDA |
+| `GPIO3` | LSM6DSR | IMU IIC_SCL |
+| `GPIO4` | 外部扩展接口 | 扩展 IIC_SCL |
+| `GPIO5` | 外部扩展接口 | 扩展 IIC_SDA |
 
-### 3. 外部接口定义
-* **磁吸充电口 (U14)**: `PCM0408-2P-C-F` (VBUS, GND)
-* **电池接口 (U13)**: `BX-ZH1.5-2PWT` (BAT+, BAT-)
-* **IIC 扩展接口 (U12)**: `HC-FPC-0.5-4P-CH20` (VCC, GND, SCL, SDA)
-* **TTL 调试口 (U2)**: `ZX-ZH1.5-2PLT` (TX, RX)
-* **电极接口**: 2 个 10 Pin FPC 接口 (FPC1, FPC2)，共计支持 8 个差分通道 (IN1N/P - IN8N/P)。
+### 3. 其他控制与外部接口
+| ESP32-S3 引脚 | 器件/接口 | 功能说明 |
+| :--- | :--- | :--- |
+| `GPIO8` | 状态灯 | MCU 状态指示灯 |
+| - | 磁吸充电口 (U14) | `PCM0408-2P-C-F` (VBUS, GND) |
+| - | 电池接口 (U13) | `BX-ZH1.5-2PWT` (BAT+, BAT-) |
+| - | IIC 扩展口 (U12) | `HC-FPC-0.5-4P-CH20` (VCC, GND, SCL, SDA) |
+| - | TTL 调试口 (U2) | `ZX-ZH1.5-2PLT` (TX, RX) |
+| - | 电极接口 | 2 个 10 Pin FPC 接口 (FPC1, FPC2)，支持 8 个差分通道 (IN1N/P - IN8N/P) |
 
 ---
 
@@ -76,7 +79,7 @@
 3. **抗干扰设计**：
    * 贴片电极的走线应尽量短且等长。
    * 测试时请远离强电磁干扰源（如大功率电机、高频无线发射设备）。
-4. **状态指示灯**：板载 `LED1` 和 `LED4` 用于指示电源和系统状态（具体控制 GPIO 请参考固件哈）。
+4. **状态指示灯**：板载 `LED1` 和 `LED4` 用于指示电源和系统状态（MCU 状态灯由 GPIO8 控制）。
 
 ---
 
