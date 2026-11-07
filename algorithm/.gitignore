@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pt
+*.log
+
+# 数据与缓存（不随仓库提供）
+公开数据集/
+_cache/
+.venv/
+venv/
+
+# 训练输出：只保留结构图和汇总，其余忽略
+outputs/*
+!outputs/模型结构图_7类手势.png
+!outputs/模型结构图_7类手势.pdf
+!outputs/模型结构图_7类手势.svg
+!outputs/模型结构图_多任务.png
+!outputs/模型结构图_多任务.pdf
+!outputs/模型结构图_多任务.svg
+!outputs/模型逐层表.csv
+!outputs/汇总表.md
