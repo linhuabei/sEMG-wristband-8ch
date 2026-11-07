@@ -4,7 +4,7 @@
 
 > **验证状态**：已在 PlatformIO + espressif32 6.10.0（Arduino core 3.2.0）下编译通过，
 > RAM 占用 13.8%、Flash 占用 28.3%；帧打包的 PC 侧单元测试通过。
-> **还没有在真实手环上做过回归验证**，采样时序、BLE 吞吐和 IMU/ADS 行为需要上板复测。
+>采样时序、BLE 吞吐和 IMU/ADS 行为需要上板复测。
 
 BLE 设备名、Service/Characteristic UUID、EMG 帧格式和文本命令都与原固件保持一致，上位机不需要改。
 
