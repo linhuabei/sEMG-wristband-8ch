@@ -1,0 +1,10 @@
+# PlatformIO 构建产物
+.pio/
+.pio_core/
+_baseline/
+
+# 本机测试产物
+test/test_emg_frame
+test/test_emg_frame.exe
+*.o
+*.log
