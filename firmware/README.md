@@ -127,7 +127,3 @@ g++ -std=c++17 -I src test/test_emg_frame.cpp src/protocol/emg_frame.cpp -o test
 - 没有 OTA、低功耗管理、量产校准；
 - 没有做长时间稳定性/内存泄漏测试。
 
-## 说明
-
-这次重构的目标是“让代码可读、可改、可测”，不是声称固件已经量产就绪。
-如果你要基于它继续做，建议先上板跑一遍 `ALL`、`ADS_DBG`、`IMU`、`EMG_START`，再和旧固件的波形/帧率对比。
