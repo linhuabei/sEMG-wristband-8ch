@@ -35,7 +35,7 @@ int main() {
 
   g_length = 0;
   emg::append(channels);
-  assert(g_length == 0);  // 还没攒满 8 帧
+  assert(g_length == 0);  // 没攒满 8 帧
   emg::flush();
   assert(g_length == 28);
   assert(g_buffer[0] == 0xAA);
@@ -64,3 +64,4 @@ int main() {
   std::printf("emg_frame tests passed\n");
   return 0;
 }
+// 这野人AI实在是太好用了

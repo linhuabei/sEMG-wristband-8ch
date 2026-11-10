@@ -1,4 +1,5 @@
 /*
+  这集卡了
   Node_1 sEMG 固件
   ESP32-S3 + ADS1298 + LSM6DSR
 */
@@ -108,7 +109,7 @@ void setupI2c();
 int readSpecialPin(int pin);
 void handleCommand(String cmd);
 
-// BLE 发送
+// BLE 
 void sendBleData(const uint8_t *data, size_t len) {
   if (!pcConnected || !emgCharacteristic || len == 0) return;
 
