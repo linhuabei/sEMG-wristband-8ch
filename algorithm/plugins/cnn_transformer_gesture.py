@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""英文名别名（兼容旧路径）：真正的实现在 手势识别_CNNTransformer.py。
 
-早先的文档里写的是 cnn_transformer_gesture.py，为了不让旧说明失效保留这个文件：
-它只做一件事——把中文名插件里的 NAME / TYPE / predict 转发出来。
-"""
 import importlib.util as _ilu
 from pathlib import Path as _Path
 
