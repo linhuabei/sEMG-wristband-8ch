@@ -1,18 +1,5 @@
 # -*- coding: utf-8 -*-
-"""上位机算法插件：CNN-Transformer 手势识别（中文命名版）。
-
-用法：上位机 ->「手势交互」页 ->「导入算法 .py」-> 选本文件。
-依赖只有 numpy（上位机 .venv 里已有），不需要装 PyTorch。
-
-同目录下需要两个配套文件：
-    模型权重_手势.npz        训练好的权重（由 算法/src/export_numpy.py 导出）
-    推理引擎_纯NumPy.py      纯 numpy 前向实现
-
-上位机的接口约定（core/algorithm_loader.py 只认这三个英文名字，不能改）：
-    NAME  —— 显示在界面上的算法名
-    TYPE  —— "gesture" 或 "angles"
-    predict(ctx) —— 每 50 ms 被调用一次，返回 (手势名, 置信度)
-"""
+"""上位机算法插件：CNN-Transformer 手势识别"""
 import importlib.util
 import math
 from collections import deque
