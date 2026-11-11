@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-"""英文名别名（兼容旧路径）：真正的实现在 连续关节角_CNNTransformer.py。"""
 import importlib.util as _ilu
 from pathlib import Path as _Path
 
