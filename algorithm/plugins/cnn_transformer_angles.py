@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import importlib.util as _ilu
 from pathlib import Path as _Path
 
