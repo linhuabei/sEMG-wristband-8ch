@@ -1,5 +1,5 @@
 """
-设备通信管理模块 - BLE版本（仅蓝牙）
+设备通信管理模块 - BLE版本
 
 数据来源：连接 ESP32 后固件自动开始 ADS1298 流式采集，
 二进制帧在 ESP32Controller 中解析后经 emg_data_received 送达。
@@ -55,7 +55,7 @@ class DeviceManager(QObject):
         # 最新 EMG 数据缓冲区（归一化 float32）
         self._latest_emg_data = None
 
-        # IMU 轮询（20 Hz，够画姿态了；读不到会自动停）
+        # IMU 轮询（20 Hz，够姿态了）
         self._imu_polling = False
         self._imu_poll_pending = False
         self._imu_timer = QTimer(self)
