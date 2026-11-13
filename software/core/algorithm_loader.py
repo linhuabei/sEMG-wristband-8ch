@@ -1,7 +1,6 @@
 """
-加载用户自写的 .py 算法插件。
-
-约定（照着 algorithms/ 下两个示例写就行）：
+加载 .py 算法插件。
+约定
   NAME  = "算法名"           必填
   TYPE  = "gesture" 或 "angles"   必填
   predict(ctx)              必填，ctx 里带 features 字典
